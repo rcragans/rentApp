@@ -4,9 +4,33 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include header %>
   </head>
   <body>
+<<<<<<< HEAD
     <h1><%= Domestico %></h1>
     <p>Welcome to <%= Domestico %></p>
+=======
+    <% include navbar %>
+    <div class="about col-sm-12">
+      <p>This is what we do</p>
+    </div>
+    <div class ="signUpForm">
+      <div class= "col-sm-12">
+        Sign Up
+      </div>
+      <div class ="col-12">
+        <input class="form firstName" placeholder="FirstName" />
+        <input class="form lastName" placeholder="LastName" />      
+      </div>
+      <div class="col-12">
+        <input class="form email" placeholder="Email" />
+        <input class="form password" placeholder="Password" />
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success register">Register</button>
+      </div>
+    </div>
+>>>>>>> 4554d7db990a6954317455d6d041743fe80c6603
   </body>
 </html>
