@@ -9,6 +9,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+const mysql = require('mysql')
+const config = require('./config')
+let connection = mysql.createConnection(config.db)
+connection.connect()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
