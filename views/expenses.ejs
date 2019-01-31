@@ -8,6 +8,28 @@
   </head>
   <body>
     <% include navbar %>
-     
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+          </div>  
+        </div>
+        <div class ="signUpForm">
+            <form action="/addExpense" method="post">
+          <div class="col-12">
+            <h1 class="setUpHeader">Add Expenses</h1>
+          </div>
+          <div class ="col-12">
+            <input class="form name" placeholder="Name" name="name" />
+            <input class="form date" type="date" placeholder="Date" name="date" />      
+          </div>
+          <div class="col-12">
+            <input class="form amount" placeholder="Amount" name="amount" />
+          </div>
+          <div class="col-12">
+            <button class="btn btn-success register">Add Expense</button>
+          </div>
+        </form>
+        </div>
+      </div>
   </body>
 </html>
