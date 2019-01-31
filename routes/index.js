@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const mysql = require('mysql')
+const config = require('../config')
+let connection = mysql.createConnection(config.db)
+connection.connect()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,7 +19,12 @@ router.get('/setup', function(req, res, next) {
 });
 
 router.post('/signupProcess', function(req, res, next) {
-  res.redirect('setup')
+  const insertQuery = `INSERT INTO users (firstName, lastName, email, password)
+  VALUES (?,?,?,?)`
+  connection.query(insertQuery,[req.body.firstName,req.body.lastName, req.body.email, req.body.password],(error,results)=>{
+    if (error){throw error}
+    res.redirect('setup')
+  })
 });
 
 router.post('/setup', function(req,res,next){
