@@ -3,29 +3,5 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/">Domestico</a>
         </div>
-<<<<<<< HEAD
-            <a class="navbar-brand" href="/">Wild or Not</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-
-        <!-- If the user is logged in, welcome them -->
-        <% if(loggedIn){ %>
-            <li><a href="#">Welcome, <%= name %>!</a></li>
-            <li class=""><a href="/logout">Logout</a></li>
-            <li>
-                <a href="/uploadAnimal">
-                    <button class="btn btn-success">Upload animal</button>
-                </a>
-            </li>
-        <% }else{ %>
-        <!-- if the user isn't logged in, show teh register and login page -->
-            <li class="reg-link"><a href="/register">Register</a></li>
-            <li class="login-link"><a href="/login">Login</a></li>
-        <% } %>
-            <li><a href="/standings">Standings</a></li>
-        </ul>
-=======
->>>>>>> b268ba6a5597aebe5aa41dfc64f3ccd3b7a9d99a
     </div>
 </nav>
