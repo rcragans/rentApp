@@ -10,6 +10,13 @@ const config ={
         resave: false,
         saveUninitialized: true
     }
+<<<<<<< HEAD
  }
  
  module.exports = config
+=======
+}
+
+module.exports = config
+
+>>>>>>> 169ee10c6783a5bd8c8c7070c351240f3fc21eef
