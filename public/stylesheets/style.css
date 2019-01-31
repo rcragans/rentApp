@@ -1,6 +1,9 @@
 
 
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   background-color: lightgreen !important;
   /* margin: auto;
   text-align: center; */
@@ -18,7 +21,16 @@ body {
   text-align: auto;
   padding: 2.5em;
 }
-
-.signUpForm {
-  
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid lightgreen;
+  background-color: lightgreen;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-box #login-form #register-link {
+  margin-top: -85px;
 }

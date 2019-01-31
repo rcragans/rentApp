@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use(helmet())
+app.use(helmet());
 app.use(expressSession(config.sessionOptions))
 
 app.use('*',(req, res, next)=>{
@@ -37,12 +37,12 @@ app.use('*',(req, res, next)=>{
   if(req.session.loggedIn){
       // res.locals is the variable that gets sent to the view
       res.locals.name = req.session.name;
-      res.locals.id = req.session.id;
+      res.locals.uid = req.session.uid;
       res.locals.email = req.session.email;
       res.locals.loggedIn = true;
   }else{
       res.locals.name = "";
-      res.locals.id = "";
+      res.locals.uid = "";
       res.locals.email = "";
       res.locals.loggedIn = false;
   }
