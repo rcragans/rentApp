@@ -3,12 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const helmet = require('helmet')
+const expressSession = require('express-session')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
+// const helmet = require('helmet')
 const mysql = require('mysql')
 const config = require('./config')
 let connection = mysql.createConnection(config.db)
@@ -25,6 +28,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.use(helmet)
+app.use(expressSession(config.sessionOptions))
+
+app.use('*',(req, res, next)=>{
+  // console.log("Middleware is working!");
+  if(req.session.loggedIn){
+      // res.locals is the variable that gets sent to the view
+      res.locals.name = req.session.name;
+      res.locals.id = req.session.id;
+      res.locals.email = req.session.email;
+      res.locals.loggedIn = true;
+  }else{
+      res.locals.name = "";
+      res.locals.id = "";
+      res.locals.email = "";
+      res.locals.loggedIn = false;
+  }
+  next();
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
