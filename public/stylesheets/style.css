@@ -5,8 +5,6 @@ body {
   padding: 0;
   height: 100vh;
   background-color: lightgreen !important;
-  /* margin: auto;
-  text-align: center; */
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -26,7 +24,7 @@ body {
   max-width: 600px;
   height: 320px;
   border: 1px solid lightgreen;
-  background-color: lightgreen;
+  background-color: lightgreen !important;
 }
 #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
