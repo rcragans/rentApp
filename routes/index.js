@@ -10,9 +10,17 @@ router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Domestico' });
 });
 
-router.post('/signupProcess', function(req, res, next) {
-  res.redirect('/login')
+router.get('/setup', function(req, res, next) {
+  res.render('setup', { title: 'Domestico' });
 });
+
+router.post('/signupProcess', function(req, res, next) {
+  res.redirect('setup')
+});
+
+router.post('/setup', function(req,res,next){
+  res.redirect('setup')
+})
 
 router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Domestico' });
