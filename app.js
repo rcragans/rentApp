@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use(helmet)
+app.use(helmet());
 app.use(expressSession(config.sessionOptions))
 
 app.use('*',(req, res, next)=>{

@@ -25,8 +25,8 @@ body {
   margin-top: 120px;
   max-width: 600px;
   height: 320px;
-  border: 1px solid #9c9c9c;
-  background-color: #EAEaEa;
+  border: 1px solid lightgreen;
+  background-color: lightgreen;
 }
 #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
