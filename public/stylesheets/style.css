@@ -1,12 +1,24 @@
 
 
 body {
-  background-color: grey !important;
-  margin: auto;
-  text-align: center;
+  background-color: lightgreen !important;
+  /* margin: auto;
+  text-align: center; */
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.container {
+  margin: auto;
+  text-align: center;
+}
+
 .about {
-  height: 500px;
+  width: 80%;
+  margin: auto;
+  text-align: auto;
+  padding: 2.5em;
+}
+
+.signUpForm {
+  
 }
