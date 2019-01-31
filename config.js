@@ -10,7 +10,7 @@ const config ={
         resave: false,
         saveUninitialized: true
     }
-}
-
-module.exports = config
+ }
+ 
+ module.exports = config
 
