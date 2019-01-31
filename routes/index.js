@@ -14,5 +14,9 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Domestico' });
 });
 
+router.get('/expenses', function(req, res, next) {
+  res.render('expenses', { title: 'Domestico' });
+});
+
 
 module.exports = router;
