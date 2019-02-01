@@ -1,6 +1,6 @@
 
 
-body {
+body.index-page  {
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -31,4 +31,39 @@ body {
 }
 #login .container #login-row #login-column #login-box #login-box #login-form #register-link {
   margin-top: -85px;
+}
+.note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, white, green);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+.signup-page .register-form {
+  height: 75vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
