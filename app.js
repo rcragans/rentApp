@@ -26,9 +26,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 app.use(helmet());
 app.use(expressSession(config.sessionOptions))
 
@@ -36,7 +33,7 @@ app.use('*',(req, res, next)=>{
   // console.log("Middleware is working!");
   if(req.session.loggedIn){
       // res.locals is the variable that gets sent to the view
-      res.locals.name = req.session.name;
+      res.locals.firstName = req.session.firstName;
       res.locals.uid = req.session.uid;
       res.locals.email = req.session.email;
       res.locals.loggedIn = true;
@@ -48,6 +45,15 @@ app.use('*',(req, res, next)=>{
   }
   next();
 })
+
+
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
