@@ -51,7 +51,7 @@ router.post('/setup', function(req,res,next){
   res.redirect('setup')
 })
 
-router.get('/login', function(req, res, next) {
+router.get('/infoPage', function(req, res, next) {
   selectQuery = `SELECT max(t1.uid) as uid, max(count) as numberOfRoomates, max(firstname) as firstName, max(amount) as amount, max(amount/count) as avgPrice FROM 
 	(
 		SELECT MAX(household.firstName) as firstname, SUM(expenses.amount) AS amount, ? as uid FROM household 
@@ -67,7 +67,7 @@ router.get('/login', function(req, res, next) {
     if(error){throw error}
     console.log(results)
     console.log('============================')
-    res.render('login', { title: 'Domestico', results: results });
+    res.render('infoPage', { title: 'Domestico', results: results });
   })
 });
 
@@ -88,7 +88,7 @@ router.post('/loginProcess', function(req,res,next){
         req.session.email = results[0].email
         req.session.uid = results[0].id
         req.session.loggedIn = true
-        res.redirect('/login')
+        res.redirect('/infoPage')
       }
     }
   })
