@@ -19,9 +19,11 @@
         <tbody>
           <tr>
             <th scope="row"></th>
+            <%results.forEach((roommate)=>{%>
             <td><%roommate.firstName%></td>
             <td><%roommate.lastName%><Otto></td>
-            <td><%%></td>
+            <td><%roommate.avgPrice%></td>
+            <%})%>
         </tbody>
       </table>
   </body>
