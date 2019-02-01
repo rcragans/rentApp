@@ -32,3 +32,19 @@ body {
 #login .container #login-row #login-column #login-box #login-box #login-form #register-link {
   margin-top: -85px;
 }
+
+
+.table{
+  margin:auto;
+  text-align: center;
+}
+
+.tableRow{
+  margin: auto;
+  text-align: center
+}
+
+.tbody{
+  margin: auto;
+  text-align: center
+}

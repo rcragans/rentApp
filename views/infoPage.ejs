@@ -8,23 +8,19 @@
   </head>
   <body>
     <% include navbar %>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Owed</th>
-          </tr>
-        </thead>
+    <table style="width:100%">
         <tbody>
-          <tr>
-            <th scope="row"></th>
-            <%results.forEach((roommate)=>{%>
-            <td><%=roommate.firstName%></td>
-            <td><%=roommate.lastName%></td>
-            <td><%=roommate.avgPrice%></td>
-            <%})%>
-        </tbody>
-      </table>
+          <tr class="tableRow">
+            <th>First</th>
+            <th>Owed</th>
+          </tr>
+          <%results.forEach((roommate)=>{%>
+        <tr>
+          <td><%=roommate.firstName%></td>
+          <td><%=roommate.avgPrice%></td>
+          <%})%>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
