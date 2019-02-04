@@ -65,8 +65,8 @@ router.get('/infoPage', function(req, res, next) {
 	GROUP BY firstname;`
   connection.query(selectQuery,[req.session.uid,req.session.uid,req.session.uid,req.session.uid],(error,results)=>{
     if(error){throw error}
-    console.log(results)
-    console.log('============================')
+    // console.log(results)
+    // console.log('============================')
     res.render('infoPage', { title: 'Domestico', results: results });
   })
 });
@@ -95,7 +95,9 @@ router.post('/loginProcess', function(req,res,next){
 })
 
 router.get('/expenses', function(req, res, next) {
-  res.render('expenses', { title: 'Domestico' });
+  selectQuery = `SELECT * FROM expenses where uid=?`
+  connection.query(selectQuery,[req.session.uid])
+  res.render('expenses')
 });
 
 router.post('/addExpense',function(req,res,next){
@@ -105,6 +107,10 @@ router.post('/addExpense',function(req,res,next){
     if (error){throw error}
     res.redirect('expenses')
   })
+})
+
+router.get('/payments', function(req,res,next){
+  res.render('payments')
 })
 
 module.exports = router;
