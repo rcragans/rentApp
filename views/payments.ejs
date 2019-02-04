@@ -6,7 +6,9 @@
     <% include header %>
   </head>
   <body>
-    <% include navbar %>
+      
+          
+        <% include navbar %>
     <div class="container">
             <div class="row">
               <div class="col-12">
@@ -24,7 +26,13 @@
                 <input class="form amount" placeholder="Amount" name="amount" />
               </div>
               <div class="col-12">
-                    <input class="form hid" placeholder="Roommate" name="hid" />
+                    <select name="hid">
+                            <%results.forEach((roommate)=>{%>
+                              <option value= "<%= roommate.id%>">
+                                  <%= roommate.firstName%>
+                              </option>
+                              <%})%>  
+                            </select>
                   </div>
               <div class="col-12">
                 <button class="btn btn-success register">Add Payment</button>  
@@ -35,3 +43,4 @@
           </div>
   </body>
 </html>
+
