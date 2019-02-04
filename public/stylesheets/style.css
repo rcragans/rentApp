@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: lightgreen !important;
+  background-color: rgb(11, 175, 11) !important;
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 

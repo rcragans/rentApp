@@ -31,7 +31,17 @@
         </form>
         <a href="/infoPage"><button class=" btn btn primary">Done</button></a>
         </div>
-
+        <table style="width:100%">
+                <tbody>
+                  <%results.forEach((expense)=>{%>
+                <tr>
+                  <td><%=expense.name%></td>
+                  <td><%=expense.date%></td>
+                  <td><%=expense.amount%></td>
+                  <%})%>
+                </tr>
+              </tbody>
+            </table>
       </div>
   </body>
 </html>
