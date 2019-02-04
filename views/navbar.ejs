@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Navbar with Inline Login Form in Dropdown</title>
+<title></title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -141,12 +141,6 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark">
 	<div class="navbar-header d-flex col">
 		<a class="navbar-brand" href="#">Dome<b>stico</b></a>  		
-		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
-			<span class="navbar-toggler-icon"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
 	</div>
 	<div id="navbarCollapse" class="collapse navbar-collapse d-flex justify-content-right ">
 		<ul class="nav navbar-nav ml-auto float-right">
@@ -155,14 +149,14 @@
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><i class="fa fa-user-o"></i> Login</a>
 				<ul class="dropdown-menu">
 					<li>
-                        <form class="form-inline login-form" action="./loginProcess" method="post">
+                        <form class="form-inline login-form" action="/loginProcess" method="post">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="Email" required>
+                                <input name="email" type="text" class="form-control" placeholder="Email" required>
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control" placeholder="Password" required>
+                                <input name="password" type="text" class="form-control" placeholder="Password" required>
                             </div>
 							<button type="submit" class="btn btn-primary login-button" >Login</button>
                         </form>                        

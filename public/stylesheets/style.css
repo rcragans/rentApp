@@ -47,3 +47,8 @@ body.index-page  {
   margin: auto;
   text-align: center
 }
+.form-signUp {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}

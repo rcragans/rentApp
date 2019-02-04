@@ -78,10 +78,12 @@ router.post('/loginProcess', function(req,res,next){
   connection.query(checkPasswordQuery,[email],(error,results)=>{
     if(error){throw error}
     if (results.length == 0){
+      console.log('FIRST CHECK')
       res.redirect('/')
     }else{
       const passwordsMatch = bcrypt.compareSync(password,results[0].password)
       if (!passwordsMatch){
+        console.log('second check')
         res.redirect('/')
       }else{
         req.session.name = results[0].firstName
@@ -96,9 +98,13 @@ router.post('/loginProcess', function(req,res,next){
 
 router.get('/expenses', function(req, res, next) {
   selectQuery = `SELECT * FROM expenses where uid=?`
-  connection.query(selectQuery,[req.session.uid])
-  res.render('expenses')
-});
+  connection.query(selectQuery,[req.session.uid], (error,results)=>{
+    if (error){throw error}
+    res.redirect('expenses')
+  })
+})
+  
+
 
 router.post('/addExpense',function(req,res,next){
   const insertQuery = `INSERT INTO expenses (id,name, date, amount, uid)
