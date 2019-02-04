@@ -47,10 +47,10 @@
 		color: #999;
 	}
 	.navbar ul.nav li a:hover, .navbar ul.nav li a:focus {
-		color: #29c68c !important;
+		color: red !important;
 	}
 	.navbar ul.nav li.active > a, .navbar ul.nav li.open > a {
-		color: #26bb84 !important;
+		color: red !important;
 		background: transparent !important;
 	}
     .navbar .form-inline .input-group-addon {
@@ -66,13 +66,13 @@
 	.navbar .form-inline .btn {
 		border-radius: 2px;
 		color: #fff;
-        border-color: #29c68c;
-		background: #29c68c;
+        border-color: red;
+		background: black;
 		outline: none;
 	}
 	.navbar .form-inline .btn:hover, .navbar .form-inline .btn:focus {
-        border-color: #26bb84;
-		background: #26bb84;
+        border-color: black;
+		background: black;
     }
 	.navbar .search-form {
 		display: inline-block;
@@ -140,7 +140,7 @@
 <body>
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark">
 	<div class="navbar-header d-flex col">
-		<a class="navbar-brand" href="#">Dome<b>stico</b></a>  		
+		<a class="navbar-brand" href="">Dome<b>stico</b></a>  		
 	</div>
 	<div id="navbarCollapse" class="collapse navbar-collapse d-flex justify-content-right ">
 		<ul class="nav navbar-nav ml-auto float-right">
@@ -156,7 +156,7 @@
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input name="password" type="text" class="form-control" placeholder="Password" required>
+                                <input name="password" type="password" class="form-control" placeholder="Password" required>
                             </div>
 							<button type="submit" class="btn btn-primary login-button" >Login</button>
                         </form>                        
