@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include header %>
+  </head>
+  <body>
+    <% include navbar %>
+    <div class="container">
+            <div class="row">
+              <div class="col-12">
+              </div>  
+            </div>
+            <div class ="signUpForm">
+                <form action="/addPayment" method="post">
+              <div class="col-12">
+                <h1 class="setUpHeader">Add Payments</h1>
+              </div>
+              <div class ="col-12">
+                <input class="form date" type="date" placeholder="Date" name="date" />      
+              </div>
+              <div class="col-12">
+                <input class="form amount" placeholder="Amount" name="amount" />
+              </div>
+              <div class="col-12">
+                    <input class="form hid" placeholder="Roommate" name="hid" />
+                  </div>
+              <div class="col-12">
+                <button class="btn btn-success register">Add Payment</button>  
+              </div>
+            </form>
+            <a href="/infoPage"><button class=" btn btn primary">Done</button></a>
+            </div>
+          </div>
+  </body>
+</html>
