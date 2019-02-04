@@ -95,10 +95,10 @@ router.post('/loginProcess', function(req,res,next){
 })
 
 router.get('/expenses', function(req, res, next) {
-  selectQuery = `SELECT * FROM expenses where uid=?`
-  connection.query(selectQuery,[req.session.uid], (error,results)=>{
+  selectQuery = `SELECT * FROM expenses where uid=? ORDER BY (ID) DESC LIMIT 10` 
+  connection.query(selectQuery,[req.session.uid,], (error,results)=>{
     if (error){throw error}
-    res.redirect('expenses')
+    res.render('expenses', { title: 'Domestico', results: results });
   })
 })
   
