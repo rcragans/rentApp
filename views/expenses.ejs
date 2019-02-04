@@ -8,9 +8,12 @@
         margin: auto;
         text-align: center;
       }
-      .tableContainer {
+      .container {
         margin: auto;
-        text-align: center
+        text-align: center;
+        border-bottom: .2em solid black;
+        padding-bottom: 5em;
+        width: 100%;
       }
       #recentEntriesText{
         margin: auto;
@@ -33,48 +36,49 @@
     </style>
     <% include header %>
   </head>
-    <body>
+  <body>
     <% include navbar %>
         <div class ="signUpForm">
             <form action="/addExpense" method="post">
-                <div class="col-12">
-                    <h1 class="setUpHeader">Add Expenses</h1>
-                </div>
-                <div class ="col-12">
-                    <input class="form name" placeholder="Name" name="name" />
-                    <input class="form date" type="date" placeholder="Date" name="date" />      
-                </div>
-                <div class="col-12">
-                    <input class="form amount" placeholder="Amount" name="amount" />
-                </div>
-                <div class="col-12">
-                    <button class="btn btn-success register">Add Expense</button>
-                </div>
-            </form>
-                    <a href="/infoPage"><button class=" btn btn primary">Back to Home</button></a>
+          <div class="col-12">
+            <h1 class="setUpHeader">Add Expenses</h1>
+          </div>
+          <div class ="col-12">
+            <input class="form name" placeholder="Name" name="name" />
+            <input class="form date" type="date" placeholder="Date" name="date" />           
+          </div>
+          <div class="col-12">
+            <input class="form amount" placeholder="Amount" name="amount" />
+          </div>
+          <div class="col-12">
+            <button class="btn btn-success register">Add Expense</button>
+            
+          </div>
+        </form>
+        <a href="/infoPage"><button class=" btn btn primary">Back to Home</button></a>
         </div>
-        <div class="tableContainer">
+      <div class="container">
         <table style="width:100%">
             <tbody>
-                <tr>
+              <tr>
                 <th></th>
                 <th id="recentEntriesText">Recent Entries</th>
                 <th></th>
-                </tr>
-                <tr class="tableRow">
+              </tr>
+              <tr class="tableRow">
                 <th class="headerName">Name</th>
                 <th class="headerDate">Date</th>
                 <th class="headerAmount">Amount</th>
-                </tr>
-                <%results.forEach((expense)=>{%>
+              </tr>
+              <%results.forEach((expense)=>{%>
             <tr>
-                <td><%=expense.name%></td>
-                <td><%=expense.date%></td>
-                <td><%=expense.amount%></td>
-                <%})%>
+              <td><%=expense.name%></td>
+              <td><%=expense.date%></td>
+              <td><%=expense.amount%></td>
+              <%})%>
             </tr>
-            </tbody>
+          </tbody>
         </table>
-        </div>
-    </body>
+      </div>
+  </body>
 </html>
