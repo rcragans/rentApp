@@ -96,9 +96,13 @@ router.post('/loginProcess', function(req,res,next){
 
 router.get('/expenses', function(req, res, next) {
   selectQuery = `SELECT * FROM expenses where uid=?`
-  connection.query(selectQuery,[req.session.uid])
-  res.render('expenses')
-});
+  connection.query(selectQuery,[req.session.uid], (error,results)=>{
+    if (error){throw error}
+    res.redirect('expenses')
+  })
+})
+  
+
 
 router.post('/addExpense',function(req,res,next){
   const insertQuery = `INSERT INTO expenses (id,name, date, amount, uid)
