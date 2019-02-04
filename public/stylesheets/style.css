@@ -5,6 +5,16 @@ body {
   /* padding: 0; */
   /* height: 100vh; */
   background-color: lightgreen !important;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: lightgreen !important;
+>>>>>>> 933cecb06c8cbb08dbcd89b3756a90d590d0395e
+>>>>>>> 8290fa8730b883f73e65b4f3d1636f412bdaffc4
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 /* 
