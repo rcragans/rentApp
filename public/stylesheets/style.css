@@ -1,17 +1,17 @@
 
 
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
+  margin: auto;
+  /* padding: 0; */
+  /* height: 100vh; */
   background-color: lightgreen !important;
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+/* 
 .container {
   margin: auto;
   text-align: center;
-}
+} */
 
 .about {
   width: 80%;
@@ -19,7 +19,7 @@ body {
   text-align: auto;
   padding: 2.5em;
 }
-#login .container #login-row #login-column #login-box {
+/* #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
   height: 320px;
@@ -31,9 +31,9 @@ body {
 }
 #login .container #login-row #login-column #login-box #login-box #login-form #register-link {
   margin-top: -85px;
-}
+} */
 
-
+/* 
 .table{
   margin:auto;
   text-align: center;
@@ -47,4 +47,4 @@ body {
 .tbody{
   margin: auto;
   text-align: center
-}
+} */
