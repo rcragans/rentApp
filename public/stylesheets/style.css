@@ -5,6 +5,13 @@ body {
   /* padding: 0; */
   /* height: 100vh; */
   background-color: lightgreen !important;
+<<<<<<< HEAD
+=======
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: lightgreen !important;
+>>>>>>> 933cecb06c8cbb08dbcd89b3756a90d590d0395e
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 /* 
