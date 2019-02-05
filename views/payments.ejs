@@ -11,11 +11,11 @@
           text-align: center;
       }
       .paymentForm {
-          border: .2em solid black;
+          /* border: .2em solid black; */
           margin-bottom: 1em;
       }
       .setUpHeader {
-          border-bottom: .1em solid black;
+          /* border-bottom: .1em solid black; */
       }
       .formDate {
         text-align: left;
@@ -35,9 +35,9 @@
   <body>
         <% include navbar %>
     <div>
-        <h3>Add payments from roommates here.
+        <h4>Add payments from roommates here.
         Select which roommate from the drop down and the amount paid.
-        Click done when finished to return to your homepage.</h3>
+        Click "Home" when finished to return to your homepage.</h4>
     </div>
 
     <div class="container">
@@ -45,12 +45,6 @@
         <form action="/addPayment" method="post">
             <div class="col-12">
                 <h1 class="setUpHeader">Add Payments</h1>
-            </div>
-            <div class ="col-12">
-                <input class="formDate" type="date" placeholder="Date" name="date" />      
-            </div>
-            <div class="col-12">
-                <input class="formAmount" placeholder="AMOUNT" name="amount" />
             </div>
             <div class="roomateDropdown">
                 <select name="hid">
@@ -61,12 +55,18 @@
                             <%})%>  
                 </select>
             </div>
+            <div class="col-12">
+                <input class="formAmount" placeholder="AMOUNT" name="amount" />
+            </div>
+            <div class ="col-12">
+                <input class="formDate" type="date" placeholder="Date" name="date" />      
+            </div>
             <div class="addPaymentButton">
                 <button class="btn btn-success register">Add Payment</button>  
             </div>
         </form>
     </div>
-    <a href="/infoPage"><button class=" btn btn-primary">Done</button></a>
+    <a href="/infoPage"><button class=" btn btn-primary">Home</button></a>
   </body>
 </html>
 
