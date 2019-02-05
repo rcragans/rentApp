@@ -1,4 +1,7 @@
-
+.aboutParagraph{
+  margin: auto;
+  text-align: center
+}
 body.index-page  {
   margin: auto;
   /* padding: 0; */
