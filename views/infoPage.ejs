@@ -6,29 +6,48 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <% include header %>
     <style>
-        table {
-            border: .1em solid black;
-        }
-        #infobuttons{
-  margin: auto;
-  text-align: center
-}
+      body {
+        background-color: lightgreen !important;
+      }
+      .overviewTitle {
+        text-align: center;
+      }
+
+      table {
+          border: .1em solid black;
+      }
+      #infoButtons {
+      margin: auto;
+      text-align: center;
+      margin-bottom: 1em;
+      }
+      #roomateButton {
+      margin: auto;
+      text-align: center;
+      margin-bottom: 1em;
+      }
+      #expenseButton {
+      margin: auto;
+      text-align: center;
+      margin-bottom: 1em;
+      }
+      #paymentButton {
+      margin: auto;
+      text-align: center;
+      margin-bottom: 1em;
+      }
     </style>
   </head>
   <body>
     <% include navbar %>
-    <div class="container" id= "infobuttons">
-        <a href="/setup" ><button class="btn btn-primary" id="infobutton">Add Roommates</button></a>
-        <a href="/expenses" ><button class="btn btn-primary" id="infobutton">Add Expenses</button></a>
-        <a href="/payments"><button  class="btn btn-primary" id="infobutton">Add Payments</button></a>
-    </div>
+
     <div class="container">
-        <h2>Overview of Your Household</h2>            
+        <h2 class=overviewTitle>Overview of Your Household</h2>            
         <table class="table table-striped">
           <thead>
             <tr id="table-headers">
               <th>Name</th>
-              <th>Owed</th>
+              <th>Owes</th>
             </tr>
           </thead>
           <tbody>
@@ -41,5 +60,18 @@
           </tbody>
         </table>
       </div>
+      <div class="container" id= "infoButtons">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="/setup" ><button class="btn btn-primary" id="roomateButton">Add Roommates</button></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="/expenses" ><button class="btn btn-primary" id="expenseButton">Add Expenses</button></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="/payments"><button  class="btn btn-primary" id="paymentButton">Add Payments</button></a>
+            </div>
+          </div>
+        </div>
   </body>
 </html>
