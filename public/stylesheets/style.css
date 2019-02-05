@@ -31,7 +31,7 @@ body {
   max-width: 600px;
   height: 320px;
   border: 1px solid rgba(0, 175, 0, 0.83);
-  background-color: rgba(0, 175, 0, 0.83) !important;
+  
 }
 #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
