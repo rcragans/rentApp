@@ -30,8 +30,7 @@
         color: darkblue;
         font-family: 'Courier New', Courier, monospace;
         text-align: center;
-        border-right: .2em solid white;
-        border-left: .2em solid white;
+        border-bottom: .2em solid white;
       }
       table {
         margin: auto;
@@ -45,7 +44,7 @@
         font-size: 1.6em;
       }
       .headerName{
-        text-align: left;
+        text-align: center;
         border-bottom: .2em solid black;
         border-right: .2em solid black;
       }
@@ -54,7 +53,7 @@
         border-bottom: .2em solid black;
       }
       .headerAmount{
-        text-align: right;
+        text-align: center;
         border-left: .2em solid black;
         border-bottom: .2em solid black;
       }
@@ -127,8 +126,8 @@
               <%results.forEach((expense)=>{%>
             <tr>
               <td><%=expense.name%></td>
-              <td><%=expense.date%></td>
-              <td><%=expense.amount%></td>
+              <td><%=expense.date.toLocaleDateString()%></td>
+              <td>$<%=expense.amount%></td>
               <%})%>
             </tr>
           </tbody>
