@@ -5,26 +5,42 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <% include header %>
+    <style>
+        table {
+            text-align: center;
+            margin: auto;
+        }
+        td {
+            text-align: center;
+        }
+        tr {
+            border: .1em solid black;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
   </head>
   <body>
     <% include navbar %>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Owed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"></th>
-            <%results.forEach((roommate)=>{%>
-            <td><%=roommate.firstName%></td>
-            <td><%=roommate.lastName%></td>
-            <td><%=roommate.avgPrice%></td>
-            <%})%>
-        </tbody>
+    <table style="width:100%">
+        <tr>
+            <th>First</th>
+            <th>Last</th>
+            <th>Owed</th>
+        </tr>
+        <tr>
+            <th>Test</th>
+            <th>Test</th>
+            <th>Test</th>
+        </tr>
+
+        <%results.forEach((roommate)=>{%>
+        <tr>
+        <td><%=roommate.firstName%></td>
+        <td><%=roommate.lastName%></td>
+        <td><%=roommate.avgPrice%></td>
+        </tr>
+        <%})%>
       </table>
   </body>
 </html>
