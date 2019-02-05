@@ -172,7 +172,7 @@
               <%results.forEach((expense)=>{%>
             <tr>
               <td><%=expense.name%></td>
-              <td><%=expense.date%></td>
+              <td><%=expense.date.toLocaleDateString()%></td>
               <td><%=expense.amount%></td>
               <%})%>
             </tr>

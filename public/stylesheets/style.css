@@ -1,12 +1,4 @@
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-
-=======
-body {
->>>>>>> e974d92b9ab2aea2f63eb7c4c02e0ac71f6ec146
-=======
->>>>>>> 47753fd56593adc3c0a5e2be2577744a1433d496
 .aboutParagraph{
   margin: auto;
   text-align: center;
@@ -14,15 +6,7 @@ body {
   margin-left: 10%;
   margin-right: 10%
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 body.index-page  {
-=======
-.index-page {
->>>>>>> e974d92b9ab2aea2f63eb7c4c02e0ac71f6ec146
-=======
-body.index-page  {
->>>>>>> 47753fd56593adc3c0a5e2be2577744a1433d496
   margin: auto;
   /* padding: 0; */
   /* height: 100vh; */
@@ -84,4 +68,9 @@ body.index-page  {
   margin-right: 10%;
   margin-left: 10%
 
+}
+
+#infobutton{
+  margin: auto;
+  text-align: center
 }

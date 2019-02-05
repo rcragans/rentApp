@@ -9,14 +9,18 @@
         table {
             border: .1em solid black;
         }
+        #infobuttons{
+  margin: auto;
+  text-align: center
+}
     </style>
   </head>
   <body>
     <% include navbar %>
-    <div class="row">
-        <a href="/setup" ><button class="btn btn primary">Add Roommates</button></a>
-        <a href="/expenses" ><button class="btn btn primary">Add Expenses</button></a>
-        <a href="/payments"><button  class="btn btn primary">Add Payments</button></a>
+    <div class="container" id= "infobuttons">
+        <a href="/setup" ><button class="btn btn-primary" id="infobutton">Add Roommates</button></a>
+        <a href="/expenses" ><button class="btn btn-primary" id="infobutton">Add Expenses</button></a>
+        <a href="/payments"><button  class="btn btn-primary" id="infobutton">Add Payments</button></a>
     </div>
     <div class="container">
         <h2>Overview of Your Household</h2>            
