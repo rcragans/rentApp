@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Domestico' });
 });
-
 router.get('/setup', function(req, res, next) {
   res.render('setup', { title: 'Domestico' });
 });
