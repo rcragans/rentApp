@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 
 body {
+=======
+.aboutParagraph{
+  margin: auto;
+  text-align: center
+}
+body.index-page  {
+>>>>>>> cb5bc120501893611da50a2ca4998c21854b56d9
   margin: auto;
   /* padding: 0; */
   /* height: 100vh; */

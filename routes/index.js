@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Domestico' });
 });
-
 router.get('/setup', function(req, res, next) {
   res.render('setup', { title: 'Domestico' });
 });
@@ -41,7 +40,7 @@ router.post('/signupProcess', function(req, res, next) {
   VALUES (?,?,?,?)`
   connection.query(insertQuery,[req.body.firstName,req.body.lastName, req.body.email, hashedPass],(error2,results2)=>{
     if (error2){throw error2}
-    res.redirect('/')
+    res.redirect('infoPage')
       })
     }
   })
@@ -110,7 +109,7 @@ router.post('/loginProcess', function(req,res,next){
 })
 
 router.get('/expenses', function(req, res, next) {
-  selectQuery = `SELECT * FROM expenses where uid=? ORDER BY (ID) DESC LIMIT 10` 
+  selectQuery = `SELECT name, date, amount FROM expenses where uid=? ORDER BY (ID) DESC LIMIT 10` 
   connection.query(selectQuery,[req.session.uid,], (error,results)=>{
     if (error){throw error}
     res.render('expenses', { title: 'Domestico', results: results });
@@ -121,7 +120,7 @@ router.get('/expenses', function(req, res, next) {
 
 router.post('/addExpense',function(req,res,next){
   const insertQuery = `INSERT INTO expenses (id,name, date, amount, uid)
-  VALUES (DEFAULT,?,?,?,?)`
+  VALUES (DEFAULT,?,?,?,?);`
   connection.query(insertQuery,[req.body.name, req.body.date, req.body.amount, req.session.uid],(error,results)=>{
     if (error){throw error}
     res.redirect('expenses')
@@ -132,10 +131,8 @@ router.get('/payments', function(req,res,next){
   dropDownQuery=`SELECT household.firstName, household.id FROM household INNER JOIN users ON users.id = household.uid WHERE users.id = ?`
   connection.query(dropDownQuery,[req.session.uid],(error,results)=>{
     if (error){throw error}
-  
     res.render('payments',{results:results})
   })
-  
 })
 
 router.post('/addPayment', function(req,res,next){
