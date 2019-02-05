@@ -22,25 +22,23 @@
   </head>
   <body>
     <% include navbar %>
+    <div class="row">
+        <a href="/expenses" ><button class="btn btn primary">Add Expenses</button></a>
+        <a href="/payments"><button  class="btn btn primary">Add Payments</button></a>
+    </div>
     <table style="width:100%">
-        <tr>
+        <tbody>
+          <tr class="tableRow">
             <th>First</th>
-            <th>Last</th>
             <th>Owed</th>
-        </tr>
+          </tr>
+          <%results.forEach((roommate)=>{%>
         <tr>
-            <th>Test</th>
-            <th>Test</th>
-            <th>Test</th>
+          <td><%=roommate.firstName%></td>
+          <td><%=roommate.avgPrice%></td>
+          <%})%>
         </tr>
-
-        <%results.forEach((roommate)=>{%>
-        <tr>
-        <td><%=roommate.firstName%></td>
-        <td><%=roommate.lastName%></td>
-        <td><%=roommate.avgPrice%></td>
-        </tr>
-        <%})%>
-      </table>
+      </tbody>
+    </table>
   </body>
 </html>

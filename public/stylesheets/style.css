@@ -1,13 +1,15 @@
 
-
-body {
+body.index-page  {
+  margin: auto;
+  /* padding: 0; */
+  /* height: 100vh; */
+  background-color: lightgreen !important;
   margin: 0;
   padding: 0;
   height: 100vh;
   background-color: lightgreen !important;
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 .container {
   margin: auto;
   text-align: center;
@@ -31,4 +33,24 @@ body {
 }
 #login .container #login-row #login-column #login-box #login-box #login-form #register-link {
   margin-top: -85px;
+}
+
+.table{
+  margin:auto;
+  text-align: center;
+}
+
+.tableRow{
+  margin: auto;
+  text-align: center
+}
+
+.tbody{
+  margin: auto;
+  text-align: center
+}
+.form-signUp {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }

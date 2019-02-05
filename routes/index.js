@@ -52,9 +52,9 @@ router.post('/setup', function(req,res,next){
 })
 
 router.get('/infoPage', function(req, res, next) {
-  selectQuery = `SELECT max(t1.uid) as uid, max(count) as numberOfRoomates, max(firstname) as firstName, max(amount) as amount, max(amount/count) as avgPrice FROM 
+  selectQuery = `SELECT max(t1.uid) as uid, max(count) as numberOfRoomates, max(firstname) as firstName, max(hid) as hid, max(amount) as amount, max(amount/count) as avgPrice FROM 
 	(
-		SELECT MAX(household.firstName) as firstname, SUM(expenses.amount) AS amount, ? as uid FROM household 
+		SELECT MAX(household.firstName) as firstname, SUM(expenses.amount) AS amount, max(household.id) as hid, ? as uid FROM household 
 			INNER JOIN users ON household.uid = users.id 
 			INNER JOIN expenses ON users.id = expenses.uid 
 		WHERE users.id = ? 
@@ -62,12 +62,25 @@ router.get('/infoPage', function(req, res, next) {
 	) as t1 INNER JOIN (
 		SELECT count(uid)+1 as count, ? as uid FROM household WHERE uid = ? GROUP BY uid
 		) as t2 ON t2.uid = t1.uid
-	GROUP BY firstname;`
+	GROUP BY firstname`;
   connection.query(selectQuery,[req.session.uid,req.session.uid,req.session.uid,req.session.uid],(error,results)=>{
     if(error){throw error}
-    console.log(results)
-    console.log('============================')
-    res.render('infoPage', { title: 'Domestico', results: results });
+    paymentQuery = `SELECT * FROM payments WHERE hid IN (SELECT household.id FROM household
+      INNER JOIN users ON users.id = household.uid WHERE users.id = ?); `
+      connection.query(paymentQuery,[req.session.uid],(error,results2,next)=>{
+        results2.forEach((payment)=>{
+          const payment1 = payment.amount
+          const hid = payment.hid
+          results.forEach((roommate, i)=>{
+            if (roommate.hid == hid){
+              results[i].avgPrice -= payment1
+              // res.json(results)
+            }
+          })
+        })
+        res.render('infoPage', { title: 'Domestico', results: results });
+
+      })
   })
 });
 
@@ -78,10 +91,12 @@ router.post('/loginProcess', function(req,res,next){
   connection.query(checkPasswordQuery,[email],(error,results)=>{
     if(error){throw error}
     if (results.length == 0){
+      console.log('FIRST CHECK')
       res.redirect('/')
     }else{
       const passwordsMatch = bcrypt.compareSync(password,results[0].password)
       if (!passwordsMatch){
+        console.log('second check')
         res.redirect('/')
       }else{
         req.session.name = results[0].firstName
@@ -95,8 +110,14 @@ router.post('/loginProcess', function(req,res,next){
 })
 
 router.get('/expenses', function(req, res, next) {
-  res.render('expenses', { title: 'Domestico' });
-});
+  selectQuery = `SELECT * FROM expenses where uid=? ORDER BY (ID) DESC LIMIT 10` 
+  connection.query(selectQuery,[req.session.uid,], (error,results)=>{
+    if (error){throw error}
+    res.render('expenses', { title: 'Domestico', results: results });
+  })
+})
+  
+
 
 router.post('/addExpense',function(req,res,next){
   const insertQuery = `INSERT INTO expenses (id,name, date, amount, uid)
@@ -104,6 +125,25 @@ router.post('/addExpense',function(req,res,next){
   connection.query(insertQuery,[req.body.name, req.body.date, req.body.amount, req.session.uid],(error,results)=>{
     if (error){throw error}
     res.redirect('expenses')
+  })
+})
+
+router.get('/payments', function(req,res,next){
+  dropDownQuery=`SELECT household.firstName, household.id FROM household INNER JOIN users ON users.id = household.uid WHERE users.id = ?`
+  connection.query(dropDownQuery,[req.session.uid],(error,results)=>{
+    if (error){throw error}
+  
+    res.render('payments',{results:results})
+  })
+  
+})
+
+router.post('/addPayment', function(req,res,next){
+  const insertQuery = `INSERT INTO payments (id, date, amount,hid)
+  VALUES (DEFAULT,?,?,?)`
+  connection.query(insertQuery,[req.body.date,req.body.amount,req.body.hid],(error,results)=>{
+  if (error){throw error}
+  res.redirect('payments')
   })
 })
 
