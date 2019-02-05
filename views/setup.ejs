@@ -15,6 +15,9 @@
           text-align: center;
           width: 100%
       }
+      .homeButton {
+        margin-top: 1em;
+      }
   </style>
   <% include header %>
 </head>
@@ -24,8 +27,8 @@
   <div class="container rommate-form">
     <div class="form">
       <div class="note">
-        <h3 class="about">Fill in information about your roommates below, then click Add. When you are finished adding
-          roommates click done to return to your homepage.</h3>
+        <h3 class="about">Fill in information about your roommates below, then click "Add." When you are finished adding
+          roommates click "Home" to return to your homepage.</h3>
       </div>
       <form action="/setupProcess" method="post">
         <h2>Add Roommates</h2>
@@ -44,7 +47,9 @@
           </div>
         </div>
     </form>
-    <a href="/infoPage"><button class=" btn btn-primary">Done</button></a>
+    <div class="homeButton">
+      <a href="/infoPage"><button class=" btn btn-primary">Home</button></a>
+    </div>
   </div>
 </body>
 
