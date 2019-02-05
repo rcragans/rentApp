@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <% include header %>
-  </head>
-  <body class="signup-page">
-    <% include navbar %>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <p class="about">Fill in information about your roommates below, then click Add. When you are finished adding roommates click done to return to your homepage.
-            </p>
-          </div>  
-        </div>
-        <div class ="signUpForm">
-            <form action="/setupProcess" method="post">
-          <div class="col-12">
-            <h1 class="setUpHeader">Add Roommate</h1>
-          </div>
-          <div class ="col-12">
-            <input class="form firstName" placeholder="FirstName" name="firstName" />
-            <input class="form lastName" placeholder="LastName" name="lastName" />      
-          </div>
-          <div class="col-12">
-            <input class="form email" placeholder="Email" name="email" />
-          </div>
-          <div class="col-12">
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <% include header %>
+</head>
+
+<body class="setup-page">
+  <% include navbar %>
+  <div class="container rommate-form">
+    <div class="form">
+      <div class="note">
+        <p class="about">Fill in information about your roommates below, then click Add. When you are finished adding
+          roommates click done to return to your homepage.</p>
+      </div>
+      <form action="/setupProcess" method="post">
+        <h2>Add Rommates</h2>
+        <div class="row form-roommate">
+          <div class="col-md-6 offset-md-3">
+            <div class="form-group">
+              <input name="firstName" type="text" class="form-control" placeholder="First Name" value="" />
+            </div>
+            <div class="form-group">
+              <input name="lastName" type="text" class="form-control" placeholder="Last Name" value="" />
+            </div>
+            <div class="form-group">
+              <input name="email" type="text" class="form-control" placeholder="Email" value="" />
+            </div>
             <button class="btn btn-success register">Add</button>
           </div>
-        </form>
-        <a href="/infoPage"><button class=" btn btn primary">Done</button></a>
         </div>
-      </div>
-  </body>
+    </form>
+    <a href="/infoPage"><button class=" btn btn primary">Done</button></a>
+  </div>
+</body>
+
 </html>
