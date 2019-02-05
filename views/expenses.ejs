@@ -133,6 +133,11 @@
               <td><%=expense.name%></td>
               <td><%=expense.date.toLocaleDateString()%></td>
               <td>$<%=expense.amount%></td>
+              <td>
+                <div class="deleteButton">
+                  <a href="/deleteExpense/<%=expense.id%>"><button class=" btn btn-primary">Delete</button></a>
+                </div>
+              </td>
               <%})%>
             </tr>
           </tbody>
