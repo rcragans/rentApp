@@ -8,7 +8,14 @@ connection.connect()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  let msg = "";
+  if (req.query.msg == "badPassword"){
+    msg = '<h2 class="text-warning">This password is not associated with this email. Please try again.</h2>'
+  }else if(req.query.msg == "noEmail"){
+    msg = '<h2 class="text-danger">This email is not registered in our system. Please try again or register!</h2>'
+  }else{
   res.render('index', { title: 'Domestico' });
+  }
 });
 
 router.get('/signup', function(req, res, next) {
@@ -84,6 +91,7 @@ router.get('/infoPage', function(req, res, next) {
 });
 
 router.post('/loginProcess', function(req,res,next){
+  let msg = ""
   const email = req.body.email
   const password = req.body.password
   const checkPasswordQuery = `SELECT * FROM users WHERE email = ?`
@@ -91,12 +99,12 @@ router.post('/loginProcess', function(req,res,next){
     if(error){throw error}
     if (results.length == 0){
       console.log('FIRST CHECK')
-      res.redirect('/')
+      res.redirect('/?msg=noEmail')
     }else{
       const passwordsMatch = bcrypt.compareSync(password,results[0].password)
       if (!passwordsMatch){
         console.log('second check')
-        res.redirect('/')
+        res.redirect('/?msg=badPassword')
       }else{
         req.session.name = results[0].firstName
         req.session.email = results[0].email
