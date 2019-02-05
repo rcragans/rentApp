@@ -3,20 +3,11 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <% include header %>
     <style>
         table {
-            text-align: center;
-            margin: auto;
-        }
-        td {
-            text-align: center;
-        }
-        tr {
             border: .1em solid black;
-            margin: auto;
-            text-align: center;
         }
     </style>
   </head>
@@ -27,19 +18,24 @@
         <a href="/expenses" ><button class="btn btn primary">Add Expenses</button></a>
         <a href="/payments"><button  class="btn btn primary">Add Payments</button></a>
     </div>
-    <table style="width:100%">
-        <tbody>
-          <tr class="tableRow">
-            <th>Name</th>
-            <th>Owed</th>
-          </tr>
-          <%results.forEach((roommate)=>{%>
-        <tr>
-          <td><%=roommate.firstName%></td>
-          <td><%=roommate.avgPrice%></td>
-          <%})%>
-        </tr>
-      </tbody>
-    </table>
+    <div class="container">
+        <h2>Overview of Your Household</h2>            
+        <table class="table table-striped">
+          <thead>
+            <tr id="table-headers">
+              <th>Name</th>
+              <th>Owed</th>
+            </tr>
+          </thead>
+          <tbody>
+              <%results.forEach((roommate)=>{%>
+            <tr>
+                <td><%=roommate.firstName%></td>
+                <td><%=roommate.avgPrice%></td>
+                <%})%>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </body>
 </html>
