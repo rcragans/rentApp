@@ -1,6 +1,9 @@
 .aboutParagraph{
   margin: auto;
-  text-align: center
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%
 }
 body.index-page  {
   margin: auto;
@@ -56,4 +59,12 @@ body.index-page  {
   flex-direction: column;
   display: flex;
   align-items: center;
+}
+
+.containerregister-form{
+  margin-top:20%;
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 10%
+
 }
