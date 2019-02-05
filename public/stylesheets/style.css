@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 
+=======
+body {
+>>>>>>> e974d92b9ab2aea2f63eb7c4c02e0ac71f6ec146
 .aboutParagraph{
   margin: auto;
   text-align: center;
@@ -7,7 +11,11 @@
   margin-left: 10%;
   margin-right: 10%
 }
+<<<<<<< HEAD
 body.index-page  {
+=======
+.index-page {
+>>>>>>> e974d92b9ab2aea2f63eb7c4c02e0ac71f6ec146
   margin: auto;
   /* padding: 0; */
   /* height: 100vh; */
