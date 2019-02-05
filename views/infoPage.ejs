@@ -31,7 +31,7 @@
               <%results.forEach((roommate)=>{%>
             <tr>
                 <td><%=roommate.firstName%></td>
-                <td><%=roommate.avgPrice%></td>
+                <td>$<%=(roommate.avgPrice).toFixed(2)%></td>
                 <%})%>
             </tr>
           </tbody>
