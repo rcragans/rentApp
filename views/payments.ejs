@@ -5,27 +5,50 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <% include header %>
   </head>
+  <style>
+      body {
+          margin: auto;
+          text-align: center;
+      }
+      .paymentForm {
+          border: .2em solid black;
+          margin-bottom: 1em;
+      }
+      .setUpHeader {
+          border-bottom: .1em solid black;
+      }
+      .formDate {
+        text-align: left;
+        margin-bottom: 1em;
+      }
+      .formAmount {
+        text-align: center;
+        margin-bottom: 1em;
+      }
+      .roomateDropdown {
+        margin-bottom: 1em;
+      }
+      .addPaymentButton {
+        margin-bottom: 1em;
+      }
+  </style>
   <body>
-      
-          
         <% include navbar %>
+
+
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-            </div>  
-        </div>
-        <div class ="signUpForm">
+        <div class ="paymentForm">
         <form action="/addPayment" method="post">
             <div class="col-12">
                 <h1 class="setUpHeader">Add Payments</h1>
             </div>
             <div class ="col-12">
-                <input class="form date" type="date" placeholder="Date" name="date" />      
+                <input class="formDate" type="date" placeholder="Date" name="date" />      
             </div>
             <div class="col-12">
-                <input class="form amount" placeholder="Amount" name="amount" />
+                <input class="formAmount" placeholder="AMOUNT" name="amount" />
             </div>
-            <div class="col-12">
+            <div class="roomateDropdown">
                 <select name="hid">
                     <%results.forEach((roommate)=>{%>
                         <option value= "<%= roommate.id%>">
@@ -34,13 +57,12 @@
                             <%})%>  
                 </select>
             </div>
-            <div class="col-12">
+            <div class="addPaymentButton">
                 <button class="btn btn-success register">Add Payment</button>  
             </div>
         </form>
-        <a href="/infoPage"><button class=" btn btn primary">Done</button></a>
-        </div>
     </div>
+    <a href="/infoPage"><button class=" btn btn primary">Done</button></a>
   </body>
 </html>
 

@@ -1,8 +1,10 @@
+
+body {
 .aboutParagraph{
   margin: auto;
   text-align: center
 }
-body.index-page  {
+.index-page {
   margin: auto;
   /* padding: 0; */
   /* height: 100vh; */
