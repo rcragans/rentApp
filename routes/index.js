@@ -117,7 +117,7 @@ router.post('/loginProcess', function(req,res,next){
 })
 
 router.get('/expenses', function(req, res, next) {
-  selectQuery = `SELECT name, date, amount FROM expenses where uid=? ORDER BY (ID) DESC LIMIT 10` 
+  selectQuery = `SELECT name, date, id, amount FROM expenses where uid=? ORDER BY (ID) DESC LIMIT 10` 
   connection.query(selectQuery,[req.session.uid,], (error,results)=>{
     if (error){throw error}
     res.render('expenses', { title: 'Domestico', results: results });
@@ -132,6 +132,14 @@ router.post('/addExpense',function(req,res,next){
   connection.query(insertQuery,[req.body.name, req.body.date, req.body.amount, req.session.uid],(error,results)=>{
     if (error){throw error}
     res.redirect('expenses')
+  })
+})
+
+router.get('/deleteExpense/:id',function(req,res,next){
+  const removeQuery = `DELETE FROM expenses WHERE id=?;`
+  connection.query(removeQuery,[req.params.id],(error,results)=>{
+    if (error){throw error}
+    res.redirect('/expenses')
   })
 })
 

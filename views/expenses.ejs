@@ -103,6 +103,21 @@
                 <th class="headerDate">DATE</th>
                 <th class="headerAmount">AMOUNT</th>
               </tr>
+              <%results.forEach((expense)=>{%>
+            <tr>
+              <td><%=expense.name%></td>
+              <td><%=expense.date.toLocaleDateString()%></td>
+              <td>$<%=expense.amount%></td>
+              <td>
+                <div class="deleteButton">
+                  <a href="/deleteExpense/<%=expense.id%>"><button class=" btn btn-danger">Delete</button></a>
+                </div>
+              </td>
+            </tr>
+            <%})%>
+          </tbody>
+        </table>
+      </div>
             </thead>
             <tbody>
                 <%results.forEach((expense)=>{%>
