@@ -8,72 +8,13 @@
       body {
         font-family: sans-serif;
       }
-      .signUpForm {
-        margin: auto;
-        text-align: center;
-        background-color: lemonchiffon;
-        width: 90%;
-        border: .3em solid black;
+      .form {
+        margin: .5em;
       }
-      .expensesHeader {
-        color: lightyellow;
-        width: 100%;
-        margin: auto;
-        background-color: black;
-        font-size: 2.1em;
-        text-shadow: -.1em -.05em darkblue;
-        /* border: .3em solid black; */
-        border-top: .2em solid black;
-        border-bottom: .2em solid black;
+      .homeButton {
+        margin: 1em;
       }
 
-      .formName {
-        background-color:lightyellow;
-        width: 40%;
-        text-align: center;
-        margin: 1em;
-        margin-top: 3em;
-        border-left: .3em solid black;
-        border-right: .3em solid black;
-      }
-      .formDate {
-        text-align: center;
-        background-color:lightyellow;
-        margin: 1em;
-        width: 50%;
-        border-left: .3em solid black;
-        border-right: .3em solid black;
-      }
-      .formAmount {
-        background-color:lightyellow;
-        margin: 1em;
-        width: 40%;
-        text-align: center;
-        border-left: .3em solid black;
-        border-right: .3em solid black;
-      }
-      .submitButton {
-        background-color: black;
-        color: yellow;
-        margin-bottom: .50em;
-        width: 8em;
-        height: 2.5em;
-        border: .3em solid yellow;
-      }
-      .homeButtonDiv {
-        text-align: center;
-      }
-      .backHomeButton {
-        margin: auto;
-        text-align: center;
-        background-color: black;
-        color: white;
-        width: 4em;
-        height: 4em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        border-radius: 50%;
-
-      }
       .container {
         margin: auto;
         text-align: center;
@@ -130,11 +71,34 @@
   </head>
   <body>
     <% include navbar %>
-        <div class ="signUpForm">
-            <form action="/addExpense" method="post">
-              <div class="addExpenseHeader">
-                <h1 class="expensesHeader">Add Expense</h1>
+    <div class="container expense-form">
+        <div class="form">
+          <div class="note">
+            <p class="about">INFORMATION THAT NEEDS TO BE FILLED IN!</p>
+          </div>
+          <form action="/addExpense" method="post">
+            <h2>Add Expense</h2>
+            <div class="row form-roommate">
+              <div class="col-md-6 offset-md-3">
+                <div class="form-group">
+                  <input name="firstName" type="text" class="form-control" placeholder="Expense" value="" />
+                </div>
+                <div class="form-group">
+                  <input name="email" type="text" class="form-control" placeholder="AMOUNT" value="" />
+                </div>
+                <div class="form-group">
+                  <input class="lastName" type="date" name="date" />
+                </div>
+                <button class="btn btn-success register">Add</button>
               </div>
+            </div>
+        </form>
+        <div class="homeButton">
+          <a href="/infoPage"><button class=" btn btn primary">Home</button></a>
+        </div>
+      </div>
+        <!-- <div class ="signUpForm">
+            <form action="/addExpense" method="post">
               <div class ="expenseInput">
                 <input class="formName" placeholder="EXPENSE" name="name" />       
               </div>
@@ -144,17 +108,8 @@
               <div class="amountInput">
                 <input class="formAmount" placeholder="AMOUNT" name="amount" />
               </div>
-              <div class="submitButtonDiv">
-                <button class="submitButton">SUBMIT</button>
-              </div>
             </form>
-        </div>
-
-        <div class="homeButtonDiv">
-          <a href="/infoPage">
-            <button class="backHomeButton">Home</button>
-          </a>
-        </div>
+        </div> -->
 
       <div class="container">
           <p class="todaysDate">
