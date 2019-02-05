@@ -63,6 +63,11 @@
       td {
         border-right: .2em solid black;
       }
+
+      .title{
+          text-align: center;
+          margin: auto
+      }
     </style>
 
 
@@ -73,27 +78,27 @@
     <div class="container expense-form">
         <div class="form">
           <div class="note">
-            <p class="about">INFORMATION THAT NEEDS TO BE FILLED IN!</p>
+            <h2 class="title">Input your expenses here and click add. Once finished click home to return to your homepage.</h2>
           </div>
           <form action="/addExpense" method="post">
             <h2>Add Expense</h2>
             <div class="row form-roommate">
               <div class="col-md-6 offset-md-3">
                 <div class="form-group">
-                  <input name="firstName" type="text" class="form-control" placeholder="Expense" value="" />
+                  <input name="name" type="text" class="form-control" placeholder="Expense" value="" />
                 </div>
                 <div class="form-group">
-                  <input name="email" type="text" class="form-control" placeholder="AMOUNT" value="" />
+                  <input name="amount" type="text" class="form-control" placeholder="AMOUNT" value="" />
                 </div>
                 <div class="form-group">
-                  <input class="lastName" type="date" name="date" />
+                  <input class="form-control" type="date" name="date" />
                 </div>
                 <button class="btn btn-success register">Add</button>
               </div>
             </div>
         </form>
         <div class="homeButton">
-          <a href="/infoPage"><button class=" btn btn primary">Home</button></a>
+          <a href="/infoPage"><button class=" btn btn-primary">Home</button></a>
         </div>
       </div>
         <!-- <div class ="signUpForm">
@@ -127,11 +132,7 @@
             <tr>
               <td><%=expense.name%></td>
               <td><%=expense.date.toLocaleDateString()%></td>
-<<<<<<< HEAD
               <td>$<%=expense.amount%></td>
-=======
-              <td><%=expense.amount%></td>
->>>>>>> b2a1a6223af877bcfa2d996b7e233b077154a249
               <%})%>
             </tr>
           </tbody>

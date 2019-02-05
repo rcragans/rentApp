@@ -9,13 +9,14 @@ connection.connect()
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let msg = "";
+  console.log(req.query.msg)
   if (req.query.msg == "badPassword"){
     msg = '<h2 class="text-warning">This password is not associated with this email. Please try again.</h2>'
   }else if(req.query.msg == "noEmail"){
     msg = '<h2 class="text-danger">This email is not registered in our system. Please try again or register!</h2>'
-  }else{
-  res.render('index', { title: 'Domestico' });
   }
+  res.render('index', { title: 'Domestico', msg:msg});
+  
 });
 
 router.get('/signup', function(req, res, next) {
@@ -91,7 +92,6 @@ router.get('/infoPage', function(req, res, next) {
 });
 
 router.post('/loginProcess', function(req,res,next){
-  let msg = ""
   const email = req.body.email
   const password = req.body.password
   const checkPasswordQuery = `SELECT * FROM users WHERE email = ?`

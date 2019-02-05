@@ -9,6 +9,13 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style>
+      .about{
+          margin:auto;
+          text-align: center;
+          width: 100%
+      }
+  </style>
   <% include header %>
 </head>
 
@@ -17,11 +24,11 @@
   <div class="container rommate-form">
     <div class="form">
       <div class="note">
-        <p class="about">Fill in information about your roommates below, then click Add. When you are finished adding
-          roommates click done to return to your homepage.</p>
+        <h3 class="about">Fill in information about your roommates below, then click Add. When you are finished adding
+          roommates click done to return to your homepage.</h3>
       </div>
       <form action="/setupProcess" method="post">
-        <h2>Add Rommates</h2>
+        <h2>Add Roommates</h2>
         <div class="row form-roommate">
           <div class="col-md-6 offset-md-3">
             <div class="form-group">
@@ -37,7 +44,7 @@
           </div>
         </div>
     </form>
-    <a href="/infoPage"><button class=" btn btn primary">Done</button></a>
+    <a href="/infoPage"><button class=" btn btn-primary">Done</button></a>
   </div>
 </body>
 
