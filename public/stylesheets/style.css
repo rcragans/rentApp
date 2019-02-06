@@ -40,6 +40,10 @@ body {
   margin-top: -85px;
 }
 
+.table-success td{
+  background-color: lightgreen !important;
+}
+
 .table{
   margin:auto;
   text-align: center;
