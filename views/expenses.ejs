@@ -104,6 +104,7 @@
                 <th class="headerAmount">AMOUNT</th>
                 <th class="blank"></th>
               </tr>
+              <tbody>
               <%results.forEach((expense)=>{%>
             <tr>
               <td><%=expense.name%></td>
@@ -115,21 +116,11 @@
                 </div>
               </td>
             </tr>
+          </tbody>
             <%})%>
           </tbody>
         </table>
       </div>
-            <!-- </thead>
-            <tbody>
-                <%results.forEach((expense)=>{%>
-                <tr>
-                  <td><%=expense.name%></td>
-                  <td><%=expense.date.toLocaleDateString()%></td>
-                  <td>$<%=expense.amount%></td>
-                  <%})%>
-                </tr>
-            </tbody>
-          </table>
-        </div> -->
+    </div>
   </body>
 </html>
