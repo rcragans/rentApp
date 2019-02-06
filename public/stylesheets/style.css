@@ -1,7 +1,7 @@
 
 
 .aboutParagraph{
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
   margin-top: 10%;
   margin-left: 10%;
@@ -55,13 +55,14 @@ body {
   text-align: center
 }
 .form-signUp {
+  margin:auto;
   flex-direction: column;
   display: flex;
   align-items: center;
 }
 
 .containerregister-form{
-  margin-top:20%;
+  margin-top:5%;
   text-align: center;
   margin-right: 10%;
   margin-left: 10%
